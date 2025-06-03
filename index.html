@@ -834,6 +834,247 @@
             color: var(--text-light);
             font-size: 1.2rem;
             font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ILRI - DNA/Gene Structure Animation */
+        .portfolio-image.ilri-genetics {
+            background: linear-gradient(135deg, #2E8B57, #228B22, #32CD32);
+        }
+
+        .portfolio-image.ilri-genetics::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 80px;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(255,255,255,0.1) 0px,
+                rgba(255,255,255,0.1) 8px,
+                transparent 8px,
+                transparent 16px
+            );
+            border-radius: 40px;
+            animation: dna-rotate 4s linear infinite;
+        }
+
+        .portfolio-image.ilri-genetics::after {
+            content: '';
+            position: absolute;
+            width: 180px;
+            height: 60px;
+            background: repeating-linear-gradient(
+                -45deg,
+                rgba(255,255,255,0.1) 0px,
+                rgba(255,255,255,0.1) 8px,
+                transparent 8px,
+                transparent 16px
+            );
+            border-radius: 30px;
+            animation: dna-rotate 4s linear infinite reverse;
+        }
+
+        @keyframes dna-rotate {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        /* Flapmax - Brain/Neural Network */
+        .portfolio-image.flapmax-ai {
+            background: linear-gradient(135deg, #4169E1, #6495ED, #87CEEB);
+        }
+
+        .portfolio-image.flapmax-ai::before {
+            content: '🧠';
+            font-size: 4rem;
+            position: absolute;
+            animation: brain-pulse 2s ease-in-out infinite;
+        }
+
+        .portfolio-image.flapmax-ai::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                circle at 30% 30%,
+                rgba(255,255,255,0.1) 2px,
+                transparent 2px
+            ),
+            radial-gradient(
+                circle at 70% 20%,
+                rgba(255,255,255,0.1) 2px,
+                transparent 2px
+            ),
+            radial-gradient(
+                circle at 20% 70%,
+                rgba(255,255,255,0.1) 2px,
+                transparent 2px
+            ),
+            radial-gradient(
+                circle at 80% 80%,
+                rgba(255,255,255,0.1) 2px,
+                transparent 2px
+            );
+            background-size: 50px 50px;
+            animation: neural-network 3s ease-in-out infinite;
+        }
+
+        @keyframes brain-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes neural-network {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        /* KEMRI - Data Analytics Charts */
+        .portfolio-image.kemri-data {
+            background: linear-gradient(135deg, #DC143C, #FF6347, #FFA500);
+        }
+
+        .portfolio-image.kemri-data::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 120px;
+            background: linear-gradient(to top, 
+                rgba(255,255,255,0.3) 0%, 
+                rgba(255,255,255,0.3) 60%, 
+                transparent 60%
+            );
+            left: 20%;
+            bottom: 20%;
+            animation: bar-chart 2s ease-in-out infinite;
+        }
+
+        .portfolio-image.kemri-data::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 120px;
+            background: linear-gradient(to top, 
+                rgba(255,255,255,0.3) 0%, 
+                rgba(255,255,255,0.3) 80%, 
+                transparent 80%
+            );
+            right: 20%;
+            bottom: 20%;
+            animation: bar-chart 2s ease-in-out infinite 0.5s;
+        }
+
+        @keyframes bar-chart {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.2); }
+        }
+
+        /* Wise & Agile - Mobile App */
+        .portfolio-image.wise-mobile {
+            background: linear-gradient(135deg, #9400D3, #8A2BE2, #BA55D3);
+        }
+
+        .portfolio-image.wise-mobile::before {
+            content: '📱';
+            font-size: 3rem;
+            position: absolute;
+            animation: phone-float 3s ease-in-out infinite;
+        }
+
+        .portfolio-image.wise-mobile::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 120px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.1);
+            animation: phone-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes phone-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes phone-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+            50% { box-shadow: 0 0 30px rgba(255,255,255,0.4); }
+        }
+
+        /* Halo Kenya - Web Development */
+        .portfolio-image.halo-web {
+            background: linear-gradient(135deg, #FF8C00, #FFA500, #FFD700);
+        }
+
+        .portfolio-image.halo-web::before {
+            content: '</>';
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: rgba(255,255,255,0.9);
+            animation: code-blink 2s ease-in-out infinite;
+        }
+
+        .portfolio-image.halo-web::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255,255,255,0.6) 50%, 
+                transparent 100%
+            );
+            top: 30%;
+            animation: scan-line 3s linear infinite;
+        }
+
+        @keyframes code-blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes scan-line {
+            0% { transform: translateY(-20px); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(200px); opacity: 0; }
+        }
+
+        /* Mechara AI - Vehicle/AI */
+        .portfolio-image.mechara-ai {
+            background: linear-gradient(135deg, #1E90FF, #4169E1, #6A5ACD);
+        }
+
+        .portfolio-image.mechara-ai::before {
+            content: '🚗';
+            font-size: 3rem;
+            position: absolute;
+            animation: car-drive 4s linear infinite;
+        }
+
+        .portfolio-image.mechara-ai::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 2px solid rgba(255,255,255,0.5);
+            border-radius: 50%;
+            border-top: 2px solid rgba(255,255,255,0.9);
+            right: 20%;
+            top: 25%;
+            animation: ai-scan 2s linear infinite;
+        }
+
+        @keyframes car-drive {
+            0% { transform: translateX(-30px); }
+            100% { transform: translateX(30px); }
+        }
+
+        @keyframes ai-scan {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .portfolio-content {
@@ -1251,7 +1492,9 @@
             <h2 class="section-title fade-in">My Work</h2>
             <div class="portfolio-grid">
                 <div class="portfolio-item fade-in">
-                    <div class="portfolio-image">Data Management System</div>
+                    <div class="portfolio-image ilri-genetics">
+                        <span style="position: relative; z-index: 10;">Livestock Genetics</span>
+                    </div>
                     <div class="portfolio-content">
                         <h3>Livestock Genetic Data Management - ILRI</h3>
                         <p>Contributing to livestock genetic data management systems for the AADGG project, including data collation, processing, and storage with comprehensive QA protocols and security measures.</p>
@@ -1264,7 +1507,9 @@
                 </div>
 
                 <div class="portfolio-item fade-in">
-                    <div class="portfolio-image">AI/ML Project</div>
+                    <div class="portfolio-image flapmax-ai">
+                        <span style="position: relative; z-index: 10;">Brain AI Detection</span>
+                    </div>
                     <div class="portfolio-content">
                         <h3>Brain Tumor Detection System - Flapmax</h3>
                         <p>Developed deep learning models using PyTorch for tumor detection and segmentation. Integrated with OpenFL for federated learning while adhering to GDPR data privacy policies.</p>
@@ -1277,7 +1522,9 @@
                 </div>
 
                 <div class="portfolio-item fade-in">
-                    <div class="portfolio-image">Data Analytics</div>
+                    <div class="portfolio-image kemri-data">
+                        <span style="position: relative; z-index: 10;">Healthcare Analytics</span>
+                    </div>
                     <div class="portfolio-content">
                         <h3>Healthcare Data Research - KEMRI</h3>
                         <p>Gathered and integrated data from diverse sources, conducted statistical analysis, and implemented data governance policies for healthcare research projects with enhanced data quality controls.</p>
@@ -1290,7 +1537,9 @@
                 </div>
 
                 <div class="portfolio-item fade-in">
-                    <div class="portfolio-image">Mobile App</div>
+                    <div class="portfolio-image wise-mobile">
+                        <span style="position: relative; z-index: 10;">Mobile HR App</span>
+                    </div>
                     <div class="portfolio-content">
                         <h3>HR Mobile Application - Wise & Agile</h3>
                         <p>Developed HR mobile application using Flutter with secure authentication, data encryption, and intuitive user interfaces. Prototyped UX that significantly increased app usage.</p>
@@ -1303,7 +1552,9 @@
                 </div>
 
                 <div class="portfolio-item fade-in">
-                    <div class="portfolio-image">Web Development</div>
+                    <div class="portfolio-image halo-web">
+                        <span style="position: relative; z-index: 10;">Social Impact Web</span>
+                    </div>
                     <div class="portfolio-content">
                         <h3>Halo Kenya Website</h3>
                         <p>Built a website for Halo Kenya using Django, HTML, CSS, and JavaScript. Focused on solutions to eradicate poverty and improve education in LMIC regions with modern web technologies.</p>
@@ -1316,7 +1567,9 @@
                 </div>
 
                 <div class="portfolio-item fade-in">
-                    <div class="portfolio-image">AI Project</div>
+                    <div class="portfolio-image mechara-ai">
+                        <span style="position: relative; z-index: 10;">AI Vehicle Tech</span>
+                    </div>
                     <div class="portfolio-content">
                         <h3>Mechara AI - Vehicle Maintenance</h3>
                         <p>Rethinking vehicle maintenance through AI-powered solutions using Django REST Framework and system deployment technologies for predictive maintenance and optimization.</p>
@@ -1384,10 +1637,10 @@
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://github.com/Byron94odhiambo" title="GitHub">🐙</a>
-                <a href="https://www.linkedin.com/in/byron-o-4150b21b0/" title="LinkedIn">💼</a>
-                <a href="https://stackoverflow.com/users/9859177/byron-odhiambo" title="Stack Overflow">📚</a>
-                
+                <a href="#" title="GitHub">🐙</a>
+                <a href="#" title="LinkedIn">💼</a>
+                <a href="#" title="Stack Overflow">📚</a>
+                <a href="#" title="Twitter">🐦</a>
             </div>
             <p>&copy; 2025 Byron Odhiambo. All rights reserved.</p>
         </div>
